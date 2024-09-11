@@ -1,10 +1,10 @@
-import { ponder } from '@/generated'
+import { ponder } from "@/generated";
 
-ponder.on('ExampleContract:VoteCast', async ({ event, context }) => {
-  const { Votes } = context.db
+ponder.on("ExampleContract:VoteCast", async ({ event, context }) => {
+  const { Votes } = context.db;
 
   await Votes.create({
     id: event.transaction.hash,
     data: event.args,
-  })
-})
+  });
+});
