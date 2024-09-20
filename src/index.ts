@@ -1,9 +1,9 @@
 import { ponder } from "@/generated";
 
 ponder.on("EnsGovernorContract:VoteCast", async ({ event, context }) => {
-  const { Votes } = context.db;
+  const { Vote } = context.db;
 
-  await Votes.create({
+  await Vote.create({
     id: event.transaction.hash,
     data: {
       voter: event.args.voter,
