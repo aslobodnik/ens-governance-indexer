@@ -8,5 +8,6 @@ export default createSchema((p) => ({
     support: p.int(),
     weight: p.bigint(),
     reason: p.string(),
+    timestamp: p.bigint(),
   }),
 }));

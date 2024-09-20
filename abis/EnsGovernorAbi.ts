@@ -1,4 +1,4 @@
-export const ExampleContractAbi = [
+export const EnsGovernorAbi = [
   {
     inputs: [
       {
