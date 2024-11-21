@@ -4,7 +4,7 @@ ponder.on("EnsGovernorContract:VoteCast", async ({ event, context }) => {
   const { Vote } = context.db;
 
   await Vote.create({
-    id: event.transaction.hash,
+    id: `${event.args.proposalId}-${event.args.voter}`,
     data: {
       voter: event.args.voter,
       proposalId: event.args.proposalId,

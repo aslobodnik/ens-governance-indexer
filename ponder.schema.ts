@@ -2,7 +2,7 @@ import { createSchema } from "@ponder/core";
 
 export default createSchema((p) => ({
   Vote: p.createTable({
-    id: p.hex(),
+    id: p.string(),
     voter: p.hex(),
     proposalId: p.bigint(),
     support: p.int(),
