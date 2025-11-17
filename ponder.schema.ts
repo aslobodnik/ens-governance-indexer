@@ -1,13 +1,11 @@
-import { createSchema } from "@ponder/core";
+import { onchainTable } from "@ponder/core";
 
-export default createSchema((p) => ({
-  Vote: p.createTable({
-    id: p.string(),
-    voter: p.hex(),
-    proposalId: p.bigint(),
-    support: p.int(),
-    weight: p.bigint(),
-    reason: p.string(),
-    timestamp: p.bigint(),
-  }),
+export const Vote = onchainTable("Vote", (t) => ({
+  id: t.text().primaryKey(),
+  voter: t.hex().notNull(),
+  proposalId: t.bigint().notNull(),
+  support: t.integer().notNull(),
+  weight: t.bigint().notNull(),
+  reason: t.text().notNull(),
+  timestamp: t.bigint().notNull(),
 }));
